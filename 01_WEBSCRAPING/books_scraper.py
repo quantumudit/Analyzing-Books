@@ -18,7 +18,7 @@ def main() -> None:
         
         while True:
             
-            print(f'Scraping Genre URL: {genre_tuple[1]}')
+            print(f'Scraping Genre URL: {genre_link}')
             
             scrape_content(genre_tuple)
             time.sleep(0.5)
@@ -31,6 +31,7 @@ def main() -> None:
             else:
                 next_page_link = extract_nextpage_link(genre_tuple)
                 genre_tuple = (genre_name, next_page_link)
+    return
 
 def load_data() -> None:
     """
@@ -38,7 +39,8 @@ def load_data() -> None:
     """
     
     books_df = pd.DataFrame(all_books)
-    books_df.to_csv('books_data.csv', index=False)
+    books_df.to_csv('books_raw_data.csv', encoding='utf-8', index=False)
+    return
 
 if __name__ == '__main__':
     
@@ -49,7 +51,7 @@ if __name__ == '__main__':
     print(ascii_art_title)
     print('Collecting Books...')
     
-    start_time = datetime.datetime.now()
+    start_time = datetime.now()
     
     extract_genres()
     
@@ -57,7 +59,7 @@ if __name__ == '__main__':
     
     main()
     
-    end_time = datetime.datetime.now()
+    end_time = datetime.now()
     scraping_time = end_time - start_time
     
     print('\n')
@@ -70,4 +72,4 @@ if __name__ == '__main__':
     load_data()
     
     print('Data Exported to CSV...')
-    print('Webscraping completed !!!')
+    print('Webscraping Completed !!!')

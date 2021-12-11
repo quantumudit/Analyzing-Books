@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
-import datetime
+from datetime import datetime, timezone
 
 SESSION = requests.Session()
 
@@ -15,7 +15,7 @@ all_genres = []
 
 def extract_genres() -> None:
     """
-    This function extracts all the genre name and genre URL as a tuple and appends each to 'all_genres' list
+    This function extracts all the 'genre name' and 'genre URL' as a tuple and appends each to 'all_genres' list
     """
     
     root_url = "https://books.toscrape.com/"
@@ -38,14 +38,15 @@ def extract_genres() -> None:
 
 def scrape_content(genre_tuple: tuple) -> None:
     """
-    This functions takes the a tuple extracted from 'extract_genre()' and contains the genre name and genre start page URL as an input argument; scrapes the books and its related feature and adds them to 'all_books' list.
+    This functions takes a tuple extracted from 'extract_genre()' that contains the 'genre name' and 'genre start page URL' as an input argument; scrapes the books and its related feature and adds them to 'all_books' list.
     Args: 
-        genre_tuple (tuple): a tuple with genre name and genre start page URL
+        genre_tuple (tuple): a tuple with 'genre name' and 'genre start page URL'
     Returns:
         None: This function returns nothing but adds the data to the 'all_books' list
     """
     
-    current_utc_timestamp = datetime.datetime.now(datetime.timezone.utc).strftime('%d-%b-%Y %H:%M:%S')
+    utc_timezone = timezone.utc
+    current_utc_timestamp = datetime.now(utc_timezone).strftime('%d-%b-%Y %H:%M:%S')
     
     root_url = "https://books.toscrape.com/"
     
@@ -81,7 +82,7 @@ def scrape_content(genre_tuple: tuple) -> None:
 
 def extract_nextpage_link(genre_tuple: tuple) -> str:
     """
-    This function checks whether the "next page" button is present in the webpage or, not and returns the value accordingly.
+    This function checks whether the 'next page' button is present in the webpage or, not and returns the value accordingly.
     Args:
         page_url (str): This is the input page URL
     Returns:

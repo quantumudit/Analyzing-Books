@@ -101,6 +101,9 @@ def extract_nextpage_link(genre_tuple: tuple) -> str:
         next_page_link = None
     return next_page_link
 
+# Testing the scraper template #
+# ---------------------------- #
+
 if __name__ == '__main__':
     
     extract_genres()

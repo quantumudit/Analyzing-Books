@@ -1,4 +1,4 @@
-![Project Logo][project_logo]
+# ![Project Logo][project_logo]
 
 ---
 
@@ -23,10 +23,12 @@
 
 This project focuses on scraping books and their associated attributes from [Books To Scrape][website_link], performing exploratory data analysis to generate insights and visualize them with the help of Power BI.
 
+[![Website Snippet][website_snippet]][website_link]
+
 The repository directory structure is as follows:
 
 Analyzing-Books<br>
-├─ 01_WEBSCRAPING<br>
+├─ 01_SCRAPER<br>
 ├─ 02_ETL<br>
 ├─ 03_DATA<br>
 ├─ 04_ANALYSIS<br>
@@ -35,47 +37,38 @@ Analyzing-Books<br>
 
 The type of content present in the directories is as follows:
 
-**01_WEBSCRAPING**
+<h5>01_SCRAPER</h5>
 
 This directory contains the python script to scrape data from the website along with flat file that has the scraped data.
 
-**02_ETL**
+<h5>02_ETL</h5>
 
-This directory contains the ETL script that takes the scraped dataset as input, transforms it and exports an analysis-ready dataset into the _03_DATA_ directory.
+This directory contains a Jupyter Notebook that performs ETL on the scraped dataset to produce an analysis-ready dataset and exports that into the _03_DATA_ directory.
 
-**03_DATA**
+<h5>03_DATA</h5>
 
-This directory contains the data that can be directly used for exploratory data analysis and data visualization purposes.
+This directory contains the data that can be directly used for data analysis and visualization.
 
-**04_ANALYSIS**
+<h5>04_ANALYSIS</h5>
 
-This directory contains the python notebooks that analyzes the clean dataset to generate insights
+This directory contains the python notebooks that analyzes the clean dataset to generate insights.
 
-**05_DASHBOARD**
+<h5>05_DASHBOARD</h5>
 
-This directory contains the python notebook with an embedded Power BI report that visualizes the data. The Power BI dashboard contains slicers, cross-filtering and other advance capabilities that end user can play with to visualize a specific facet of the data or, to get additional insights.
+This directory contains a simple markdown file with an embedded Power BI report link that visualizes the data.
 
-**06_RESOURCES**
+<h5>06_RESOURCES</h5>
 
-This directory contains images, icons, layouts, etc. that are used in this project
+This directory contains images, icons, layouts, etc. that are used in this project.
 
 ## Prerequisites
 
 The major skills that are required as prerequisite to fully understand this project are as follows:
 
-- Basics of Python
-- Basics of HTML
-- Python libraries: Requests, BeautifulSoup, Pandas, DateTime
-- Basics of Python Notebooks
+- Basics of Python & Jupyter Notebook
+- Understanding of Python libraries mentioned in [requirements.txt][requirements] file
+- Basics of HTML & CSS
 - Basics of Power BI
-
-In order to complete the project, I've used the following applications and libraries
-
-- Python
-- Python libraries mentioned in requirements.txt file
-- Jupyter Notebook
-- Visual Studio Code
-- Microsoft Power BI
 
 > The choice of applications & their installation might vary based on individual preferences & system settings.
 
@@ -85,9 +78,9 @@ The project architecture is quite straight forward and can be explained through 
 
 ![Process Architecture][process_workflow]
 
-As per the above workflow suggests; we are first scraping the data from the website using the Python script and collecting the same in a flat file which is then processed and cleaned with another ETL specific Python script.
+As per the above workflow suggests; we are first scraping the data from the website using the Python script and collecting it in a flat file which is then processed and cleaned with another ETL specific Jupyter Notebook.
 
-Finally; we leverage the clean & analysis-ready dataset for some exploratory data analysis (EDA) using Jupyter Notebook and creating an insightful report using Power BI
+Finally; we leverage the clean & analysis-ready dataset for some exploratory data analysis (EDA) using Jupyter Notebook and creating an insightful report using Power BI.
 
 ## Demo
 
@@ -95,15 +88,13 @@ The below graphic shows scraping of data from the website:
 
 ![Scraping Graphic][scraping_graphic]
 
-From this graphic we can observe a significant reduce in the time of scraping due to the use of multi-threading.
-
 ## Support
 
 If you have any doubts, queries or, suggestions then, please connect with me in any of the following platforms:
 
 [![Linkedin Badge][linkedinbadge]][linkedin] [![Twitter Badge][twitterbadge]][twitter]
 
-If you like my work then, you may support me at Patreon:
+If you like my work then, you may support me at [Patreon][patreon]:
 
 <a href="https://www.patreon.com/quantumudit" target="_blank">
 <img src="https://i.ibb.co/94bkJwp/become-a-patreon.png" alt="become-a-patreon" border="0" width="170" height="50">
@@ -122,15 +113,20 @@ This license allows reusers to distribute, remix, adapt, and build upon the mate
 [project_logo]: 06_RESOURCES/project_cover_image.png
 [process_workflow]: 06_RESOURCES/process_architecture.png
 [scraping_graphic]: 06_RESOURCES/scraping_graphic.gif
+[website_snippet]: 06_RESOURCES/website_snip.png
+[dashboard_image]: ...
 
 <!-- External Links -->
 
 [website_link]: https://books.toscrape.com/
+[requirements]: ./requirements.txt
+[dashboard_link]: https://app.powerbi.com/..
 
 <!-- Profile Links -->
 
 [linkedin]: https://www.linkedin.com/in/uditkumarchatterjee/
 [twitter]: https://twitter.com/quantumudit
+[patreon]: https://www.patreon.com/quantumudit
 
 <!-- Shields Profile Links -->
 

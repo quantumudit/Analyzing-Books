@@ -89,6 +89,10 @@ The below graphic shows scraping of data from the website:
 
 ![Scraping Graphic][scraping_graphic]
 
+The interactive Power BI dashboard can be viewed here:
+
+[![Power BI Dashboard][dashboard_image]][dashboard_link]
+
 ## Support
 
 If you have any doubts, queries or, suggestions then, please connect with me in any of the following platforms:
@@ -115,13 +119,13 @@ This license allows reusers to distribute, remix, adapt, and build upon the mate
 [process_workflow]: 06_RESOURCES/process_architecture.png
 [scraping_graphic]: 06_RESOURCES/scraping_graphic.gif
 [website_snippet]: 06_RESOURCES/website_snip.png
-[dashboard_image]: ...
+[dashboard_image]: 06_RESOURCES/dashboard_image.png
 
 <!-- External Links -->
 
 [website_link]: https://books.toscrape.com/
 [requirements]: ./requirements.txt
-[dashboard_link]: https://app.powerbi.com/..
+[dashboard_link]: https://app.powerbi.com/view?r=eyJrIjoiMjdlZjJjYmUtNjEyMC00ODVjLTk4Y2YtMWEzYmI4MDZlNjljIiwidCI6IjcwODlkNGIxLTQyMmUtNDYzZi1hNGM3LTViY2FiOTk0MGRiZCJ9
 
 <!-- Profile Links -->
 

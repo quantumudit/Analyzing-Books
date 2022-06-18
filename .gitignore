@@ -6,6 +6,11 @@ __pycache__/
 # C extensions
 *.so
 
+# Power BI extensions
+
+*.pbix
+*.pbit
+
 # Distribution / packaging
 .Python
 build/

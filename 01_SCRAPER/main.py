@@ -41,4 +41,4 @@ if books.response_status() == 200:
     books.load_data()
 
     print('Data Exported to CSV...')
-    print('Web Scraping Completed !!!')
+    print('Web Scraping Completed !!!\n')

@@ -68,6 +68,7 @@ The major skills that are required as prerequisite to fully understand this proj
 - Basics of Python & Jupyter Notebook
 - Understanding of Python libraries mentioned in [requirements.txt][requirements] file
 - Basics of HTML & CSS
+- Basic understanding of browser developer tools
 - Basics of Power BI
 
 > The choice of applications & their installation might vary based on individual preferences & system settings.

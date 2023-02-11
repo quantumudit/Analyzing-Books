@@ -1,15 +1,15 @@
 """
 Books to Scrape Website Scraper
 =================================
-
 Author: Udit Kumar Chatterjee
 Email: quantumudit@gmail.com
 =================================
 
-This script collects relevant data from the https://books.toscrape.com/ website using the requests and BeautifulSoup
+This script collects relevant data from the "https://books.toscrape.com/" website using the requests and BeautifulSoup
 modules, and stores the data in a CSV file. The functional programming approach has been used in the script,
-where specific functions have been created to perform the web scraping tasks. The functions included are:
+where specific functions have been created to perform the web scraping tasks.
 
+The functions included are:
 - scrape_genres: This function returns a list of tuples, each tuple representing a genre and its associated link.
 - scrape_content: This function scrapes and returns a list with complete details for all books in a specific genre.
 """

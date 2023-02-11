@@ -41,7 +41,7 @@ Analyzing-Books<br>
 
 The type of content present in the directories is as follows:
 
-<h5>01_SCRAPER</h5>
+### 01_SCRAPER
 
 This directory comprises a [Python script](01_SCRAPER/main.py) designed to extract information from the website and a [flat file](01_SCRAPER/scraped_data.csv) that stores the data obtained through the scraping process. 
 
@@ -49,7 +49,7 @@ The script in this directory automates the data scraping process, making it easi
 
 This setup facilitates the efficient and organized management of the data obtained from the website.
 
-<h5>02_ETL</h5>
+### 02_ETL
 
 This directory houses a [Jupyter Notebook](02_ETL/books_data_transformation.ipynb) that undertakes an ETL (Extract, Transform, Load) process on the data obtained through scraping. 
 
@@ -65,7 +65,7 @@ Finally, the transformed data is exported into the [03_DATA](03_DATA/) directory
 
 This Jupyter Notebook serves as a crucial step in the data preparation process, enabling the effective and efficient transformation of raw data into a form that can provide valuable insights.
 
-<h5>03_DATA</h5>
+### 03_DATA
 
 This directory contains the data that can be directly used for data analysis and visualization.
 
@@ -73,7 +73,7 @@ The contents of this directory include only the pristine and organized [data](/0
 
 This data has been thoroughly processed and scrubbed of any errors or inconsistencies, ensuring that it can be relied upon to provide accurate and meaningful insights. 
 
-<h5>04_ANALYSIS</h5>
+### 04_ANALYSIS
 
 This directory contains the python notebooks that analyzes the clean dataset to generate insights.
 
@@ -85,7 +85,7 @@ The notebook is thoroughly annotated and the results of each analysis are clearl
 
 The well-documented nature of the notebook makes it a valuable resource for anyone looking to gain a deeper understanding of the data and the insights it contains.
 
-<h5>05_DASHBOARD</h5>
+### 05_DASHBOARD
 
 This directory houses a straightforward [markdown file](5_DASHBOARD/Books%20Analysis%20Dashboard.md) that includes an embedded link to a Power BI report. 
 
@@ -95,7 +95,7 @@ The simplicity of the markdown file, combined with the robust capabilities of Po
 
 Whether you are looking to gain a high-level overview of the data, or to drill down into specific details, the Power BI report provides an effective and engaging way to work with the data.
 
-<h5>06_RESOURCES</h5>
+### 06_RESOURCES
 
 This directory serves as a repository for various visual elements used in this project, including images, icons, layouts, styling files, etc. 
 

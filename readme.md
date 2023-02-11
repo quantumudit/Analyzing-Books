@@ -21,7 +21,11 @@
 
 ## Overview
 
-This project focuses on scraping books and their associated attributes from [Books To Scrape][website_link], performing exploratory data analysis to generate insights and visualize them with the help of Power BI.
+The objective of this project is to gather information about books and their attributes from the website [Books To Scrape][website_link].
+
+The collected data will then undergo a thorough exploratory data analysis, aimed at gaining valuable insights. 
+
+These insights will be effectively visualized using the Power BI tool to provide a clear and comprehensive understanding of the data. The project's primary focus is to extract information from the website and turn it into useful insights and visual representations.
 
 [![Website Snippet][website_snippet]][website_link]
 
@@ -39,70 +43,114 @@ The type of content present in the directories is as follows:
 
 <h5>01_SCRAPER</h5>
 
-This directory contains the python script to scrape data from the website along with flat file that has the scraped data.
+This directory comprises a [Python script](01_SCRAPER/main.py) designed to extract information from the website and a [flat file](01_SCRAPER/scraped_data.csv) that stores the data obtained through the scraping process. 
+
+The script in this directory automates the data scraping process, making it easier to collect information from the website in question. The flat file serves as a storage space for the scraped data, allowing for easy access and manipulation of the information gathered. 
+
+This setup facilitates the efficient and organized management of the data obtained from the website.
 
 <h5>02_ETL</h5>
 
-This directory contains a Jupyter Notebook that performs ETL on the scraped dataset to produce an analysis-ready dataset and exports that into the _03_DATA_ directory.
+This directory houses a [Jupyter Notebook](02_ETL/books_data_transformation.ipynb) that undertakes an ETL (Extract, Transform, Load) process on the data obtained through scraping. 
+
+The purpose of this process is to convert the raw data into a form that is suitable for analysis. The Jupyter Notebook performs transformations on the scraped dataset to clean, organize, and structure the data into a format that is ready for analysis. 
+
+This notebook is characterized by its thorough documentation, with each step of the analysis process clearly explained and described. 
+
+The data cleaning and transformation steps, in particular, are carefully documented, ensuring that the thought process and decisions made during these processes are easily understood. 
+
+This attention to detail in the documentation makes the notebook a valuable resource for anyone looking to understand how the data was cleaned and transformed to generate meaningful insights.
+
+Finally, the transformed data is exported into the [03_DATA](03_DATA/) directory, making it easily accessible for further examination and analysis.
+
+This Jupyter Notebook serves as a crucial step in the data preparation process, enabling the effective and efficient transformation of raw data into a form that can provide valuable insights.
 
 <h5>03_DATA</h5>
 
 This directory contains the data that can be directly used for data analysis and visualization.
 
+The contents of this directory include only the pristine and organized [data](/03_DATA/books_data.csv), ready to be utilized for data analysis and visualization. 
+
+This data has been thoroughly processed and scrubbed of any errors or inconsistencies, ensuring that it can be relied upon to provide accurate and meaningful insights. 
+
 <h5>04_ANALYSIS</h5>
 
 This directory contains the python notebooks that analyzes the clean dataset to generate insights.
 
+This directory contains a [Jupyter Notebook](/04_ANALYSIS/books_data_analysis.ipynb) that analyzes the clean dataset to uncover valuable insights. 
+
+This notebook performs complex data analysis and has been crafted to make it easy to work with the clean data. 
+
+The notebook is thoroughly annotated and the results of each analysis are clearly documented within the text cells. This detailed documentation makes it easy to follow the thought process and understand the insights generated through the analysis. 
+
+The well-documented nature of the notebook makes it a valuable resource for anyone looking to gain a deeper understanding of the data and the insights it contains.
+
 <h5>05_DASHBOARD</h5>
 
-This directory contains a simple markdown file with an embedded Power BI report link that visualizes the data.
+This directory houses a straightforward [markdown file](5_DASHBOARD/Books%20Analysis%20Dashboard.md) that includes an embedded link to a Power BI report. 
+
+This report serves as a visual representation of the data and provides a dynamic, interactive experience for exploring and analyzing the information. 
+
+The simplicity of the markdown file, combined with the robust capabilities of Power BI, make it easy to access and interact with the data in a way that is both intuitive and insightful. 
+
+Whether you are looking to gain a high-level overview of the data, or to drill down into specific details, the Power BI report provides an effective and engaging way to work with the data.
 
 <h5>06_RESOURCES</h5>
 
-This directory contains images, icons, layouts, etc. that are used in this project.
+This directory serves as a repository for various visual elements used in this project, including images, icons, layouts, styling files, etc. 
+
+These elements play a crucial role in the overall presentation and visualization of the data and help to bring the insights generated by the analysis to life. 
+
+By having these elements easily accessible in a central location, the project is streamlined and efficient, allowing for faster and more effective data analysis and visualization.
 
 ## Prerequisites
 
-The major skills that are required as prerequisite to fully understand this project are as follows:
+To fully grasp the concepts and processes involved in this project, it is recommended to have a solid understanding of the following skills:
 
-- Basics of Python & Jupyter Notebook
-- Understanding of Python libraries mentioned in [requirements.txt][requirements] file
-- Basics of HTML & CSS
-- Basic understanding of browser developer tools
-- Basics of Power BI
+- Fundamental knowledge of Python and Jupyter Notebook
+- Familiarity with the Python libraries listed in the [requirements.txt][requirements] file
+- Basic proficiency in HTML and CSS
+- Basic familiarity with browser developer tools
+- An understanding of the basics of Power BI
 
-> The choice of applications & their installation might vary based on individual preferences & system settings.
+Having these skills as a foundation will help to ensure a smooth and effective experience while working on this project.
+
+> The selection of applications and their installation process may differ depending on personal preferences and computer configurations.
 
 ## Architecture
 
-The project architecture is quite straight forward and can be explained through the below image:
+The architecture of this project is straightforward and can be easily understood through the accompanying diagram, as seen below:
 
 ![Process Architecture][process_workflow]
 
-As per the above workflow suggests; we are first scraping the data from the website using the Python script and collecting it in a flat file which is then processed and cleaned with another ETL specific Jupyter Notebook.
+The project architecture consists of the following steps:
 
-Finally; we leverage the clean & analysis-ready dataset for some exploratory data analysis (EDA) using Jupyter Notebook and creating an insightful report using Power BI.
+- **Data scraping**: Data is collected from a website using a Python script and stored in a flat file.
+- **Data cleaning**: The raw data is processed and cleaned through the use of an ETL-specific Jupyter Notebook.
+- **Data visualization**: The cleaned and analysis-ready dataset is used for exploratory data analysis (EDA) through Jupyter Notebook and creating a comprehensive and insightful report through Power BI.
+
+These steps are designed to be straightforward and efficient, allowing for quick and effective analysis of the data and generation of meaningful insights.
 
 ## Demo
 
-The below graphic shows scraping of data from the website:
+The following illustration demonstrates the process of collecting data from the website through scraping:
 
 ![Scraping Graphic][scraping_graphic]
 
-The interactive Power BI dashboard can be viewed here:
+Access the interactive Power BI dashboard by clicking on this link here:
 
 [![Power BI Dashboard][dashboard_image]][dashboard_link]
 
 ## Support
 
-If you have any doubts, queries or, suggestions then, please connect with me in any of the following platforms:
+If you have any questions, concerns, or suggestions, feel free to reach out to me through any of the following channels:
 
 [![Linkedin Badge][linkedinbadge]][linkedin] [![Twitter Badge][twitterbadge]][twitter]
 
-If you like my work then, you may support me at [Patreon][patreon]:
+If you find my work valuable, you can show your appreciation by [buying me a coffee][buy_me_a_coffee]
 
-<a href="https://www.patreon.com/quantumudit" target="_blank">
-<img src="https://i.ibb.co/94bkJwp/become-a-patreon.png" alt="become-a-patreon" border="0" width="170" height="50">
+<a href="https://www.buymeacoffee.com/quantumudit" target="_blank">
+<img src="https://i.ibb.co/9cyrq6m/buy-me-a-coffee.png" alt="buy-me-a-coffee" border="0" width="170" height="50">
 </a>
 
 ## License
@@ -131,7 +179,7 @@ This license allows reusers to distribute, remix, adapt, and build upon the mate
 
 [linkedin]: https://www.linkedin.com/in/uditkumarchatterjee/
 [twitter]: https://twitter.com/quantumudit
-[patreon]: https://www.patreon.com/quantumudit
+[buy_me_a_coffee]: https://www.buymeacoffee.com/quantumudit
 
 <!-- Shields Profile Links -->
 

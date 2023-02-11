@@ -1,10 +1,10 @@
 # ![Project Logo][project_logo]
 
-The following interactive Power BI dashboard helps in analyzing the data in a better way:
+The interactive Power BI dashboard provided below facilitates more effective analysis of the data: 
 
 [![Power BI Dashboard][dashboard_image]][dashboard_link]
 
-All the visuals in the dashboards cross-filters one-another which helps in deep-dive analysis of the data.
+The Power BI dashboards contain cross-filtering visuals, allowing for deeper and more comprehensive analysis of the data. This means that when you select a specific data point in one visual, it will automatically filter other visuals in the dashboard to show only relevant information.
 
 <!-- Links -->
 

@@ -6,12 +6,13 @@ Author: Udit Kumar Chatterjee
 Email: quantumudit@gmail.com
 =================================
 
-This script collects relevant data from the https://books.toscrape.com/ website using the requests and BeautifulSoup modules, and stores the data in a CSV file. The functional programming approach has been used in the script, where specific functions have been created to perform the web scraping tasks. The functions included are:
+This script collects relevant data from the https://books.toscrape.com/ website using the requests and BeautifulSoup
+modules, and stores the data in a CSV file. The functional programming approach has been used in the script,
+where specific functions have been created to perform the web scraping tasks. The functions included are:
 
 - scrape_genres: This function returns a list of tuples, each tuple representing a genre and its associated link.
 - scrape_content: This function scrapes and returns a list with complete details for all books in a specific genre.
 """
-
 
 # imports
 import requests
@@ -29,57 +30,58 @@ HEADERS = {
     "accept-language": "en-US"
 }
 
-## ========== Helper Functions ========== ##
+
+# ========== Helper Functions ========== #
 
 def scrape_genres() -> list:
     """
     This function returns a list having tuples for each genre and its link.
     """
-    
+
     # initializing list to store all genres
-    all_genres = []
-    
+    genres = []
+
     # sending request to root URL and fetching content
-    response = SESSION.get(ROOT_URL, headers=HEADERS)
-    soup = BeautifulSoup(response.content, 'lxml')
+    resp = SESSION.get(ROOT_URL, headers=HEADERS)
+    soup = BeautifulSoup(resp.content, 'lxml')
     genre_list_content = soup.find('ul', class_='nav nav-list').find('li').find('ul').find_all('li')
 
     # looping through the genres list to fetch name and link of each genre
     for genre in genre_list_content:
-        genre_name = genre.find('a').text.strip()
+        gen_name = genre.find('a').text.strip()
 
         genre_partial_url = genre.find('a')['href']
         genre_full_url = urljoin(ROOT_URL, genre_partial_url)
 
-        genre_details = (genre_name, genre_full_url)
-        all_genres.append(genre_details)
-    return all_genres
+        genre_details = (gen_name, genre_full_url)
+        genres.append(genre_details)
+    return genres
 
 
-def scrape_content(genre_tuple: tuple) -> list:
+def scrape_content(gen_tuple: tuple) -> list:
     """
     This functions takes a tuple that contains the 'genre name' and
     'page URL' as an input argument to scrape the books and its related feature and
     returns a list with all the book details from the genre
     """
-    
+
     # initializing list to store all books details for the genre
     all_genre_books = []
-    
+
     # fetching the UTC timezone and current timestamp
     utc_timezone = timezone.utc
     current_utc_timestamp = datetime.now(utc_timezone).strftime('%d-%b-%Y %H:%M:%S')
 
     # fetching genre name and link from the input argument
-    genre_name = genre_tuple[0]
-    page_url = genre_tuple[1]
+    gen_name = gen_tuple[0]
+    page_url = gen_tuple[1]
 
     # looping through the pages of the genre
     while True:
-        
+
         # sending request to the page URL and fetching content
-        response = SESSION.get(page_url, headers=HEADERS)
-        soup = BeautifulSoup(response.content, 'lxml')
+        resp = SESSION.get(page_url, headers=HEADERS)
+        soup = BeautifulSoup(resp.content, 'lxml')
         content = soup.select('article.product_pod')
 
         # looping through the books and fetching details
@@ -94,7 +96,7 @@ def scrape_content(genre_tuple: tuple) -> list:
 
             book_details = {
                 "title": name,
-                "genre": genre_name,
+                "genre": gen_name,
                 "price": price,
                 "star_rating": stars,
                 "stock_availability": availability,
@@ -103,7 +105,7 @@ def scrape_content(genre_tuple: tuple) -> list:
             }
 
             all_genre_books.append(book_details)
-        
+
         # checking for next page presence for the genre
         if soup.find('li', class_='next') is not None:
             next_page_partial_link = soup.find('li', class_='next').find('a')['href']
@@ -114,14 +116,15 @@ def scrape_content(genre_tuple: tuple) -> list:
 
     return all_genre_books
 
-## ========== Web Scraping & Data Load ========== ##
+
+# ========== Web Scraping & Data Load ========== #
 
 if __name__ == '__main__':
-    
+
     # sending request to get response code
     response = SESSION.get(ROOT_URL, headers=HEADERS)
     status = response.status_code
-    
+
     if status != 200:
         print(f"The status code is: {status}. Web scraping is not possible")
     else:
@@ -129,10 +132,10 @@ if __name__ == '__main__':
         print(scraper_title)
         print('\n')
         print('Collecting Books...')
-        
+
         # initializing list to store all books
         all_books = []
-        
+
         # logging the web scraping start time
         start_time = datetime.now()
 
@@ -147,7 +150,7 @@ if __name__ == '__main__':
 
             print('\n')
             print(f'Scraping Genre: {genre_name}')
-            
+
             genre_books = scrape_content(genre_tuple)
             all_books = all_books + genre_books
 
@@ -166,11 +169,10 @@ if __name__ == '__main__':
 
         # writing scraped data into a CSV file
         with open('scraped_data.csv', 'w', newline='') as f:
-            csv_writer = DictWriter(f, fieldnames=["title", "genre", "price", "star_rating", 
-                                                "stock_availability", "book_image", "last_updated_at_UTC"])
+            csv_writer = DictWriter(f, fieldnames=["title", "genre", "price", "star_rating",
+                                                   "stock_availability", "book_image", "last_updated_at_UTC"])
             csv_writer.writeheader()
             csv_writer.writerows(all_books)
 
         print('Data Exported to CSV...')
         print('Web Scraping Completed !!!\n')
-

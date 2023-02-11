@@ -16,13 +16,14 @@ Functions include:
 import pandas as pd
 from tabulate import tabulate
 
-### ========== Functions ========== ### 
+
+# ========== Functions ========== #
 
 def dataframe_structure(dataframe: pd.DataFrame) -> dict:
     """
-    This function takes in a Pandas DataFrame as an input and returns a dictionary containing details about the structure of the dataframe.
-    The returned dictionary includes information such as the number of dimensions, shape, row and column count, total and non-null datapoints,
-    total memory usage, and average memory usage of the dataframe.
+    This function takes in a Pandas DataFrame as an input and returns a dictionary containing details about the
+    structure of the dataframe. The returned dictionary includes information such as the number of dimensions, shape,
+    row and column count, total and non-null datapoints, total memory usage, and average memory usage of the dataframe.
 
     Parameters:
     ----------
@@ -44,11 +45,11 @@ def dataframe_structure(dataframe: pd.DataFrame) -> dict:
         "Total Memory Usage": dataframe.memory_usage(deep=True).sum(),
         "Average Memory Usage": dataframe.memory_usage(deep=True).mean().round()
     }
-    
+
     return structure_details
 
 
-def dict_to_table(input_dict:dict, column_headers:list):
+def dict_to_table(input_dict: dict, column_headers: list):
     """
     This function creates a tabular view of the dictionary results
     
@@ -62,7 +63,7 @@ def dict_to_table(input_dict:dict, column_headers:list):
     tabulate object: unicode tabular structure of the dataframe
     """
     table_vw = tabulate(input_dict.items(),
-                        headers=column_headers, 
+                        headers=column_headers,
                         tablefmt="pretty",
                         stralign='left')
 
@@ -81,4 +82,3 @@ def datatype_details(df: pd.DataFrame) -> None:
     for dt in available_dtypes:
         field_count = df.select_dtypes(dt).dtypes.count()
         print(f"There are {field_count} fields with {dt} datatype")
-        

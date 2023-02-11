@@ -17,11 +17,13 @@ import pandas as pd
 from tabulate import tabulate
 
 
+# ========== Functions ========== #
+
 def dataframe_structure(dataframe: pd.DataFrame) -> dict:
     """
-    This function takes in a Pandas DataFrame as an input and returns a dictionary containing details about the structure of the dataframe.
-    The returned dictionary includes information such as the number of dimensions, shape, row and column count, total and non-null datapoints,
-    total memory usage, and average memory usage of the dataframe.
+    This function takes in a Pandas DataFrame as an input and returns a dictionary containing details about the
+    structure of the dataframe. The returned dictionary includes information such as the number of dimensions, shape,
+    row and column count, total and non-null datapoints, total memory usage, and average memory usage of the dataframe.
 
     Parameters:
     ----------
@@ -47,7 +49,7 @@ def dataframe_structure(dataframe: pd.DataFrame) -> dict:
     return structure_details
 
 
-def dict_to_table(input_dict:dict, column_headers:list):
+def dict_to_table(input_dict: dict, column_headers: list):
     """
     This function creates a tabular view of the dictionary results
     

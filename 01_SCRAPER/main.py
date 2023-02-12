@@ -151,8 +151,8 @@ if __name__ == '__main__':
             print('\n')
             print(f'Scraping Genre: {genre_name}')
 
-            genre_books = scrape_content(genre_tuple)
-            all_books = all_books + genre_books
+            # scraping and adding books to list
+            all_books += scrape_content(genre_tuple)
 
             print(f'Total Books Collected: {len(all_books)}')
 
@@ -170,7 +170,7 @@ if __name__ == '__main__':
         # writing scraped data into a CSV file
         with open('scraped_data.csv', 'w', newline='') as f:
             csv_writer = DictWriter(f, fieldnames=["title", "genre", "price", "star_rating",
-                                                   "stock_availability", "book_image", "last_updated_at_UTC"])
+                                                "stock_availability", "book_image", "last_updated_at_UTC"])
             csv_writer.writeheader()
             csv_writer.writerows(all_books)
 
